@@ -62,9 +62,10 @@ class MRAC(BaseControl):
         Ixx = self.Ixx
         Iyy = self.Iyy
         Izz = self.Izz
-        l = self.l
-        Ka = self.Ka
-        Km = self.Km
+        # Unused variables.
+        # l = self.l  # noqa: E741
+        # Ka = self.Ka
+        # Km = self.Km
 
         a_sub = np.array([[0, 0, 0, g*np.sin(psi), g*np.cos(psi), 0],
                           [0, 0, 0, -g*np.cos(psi), g*np.sin(psi), 0]])

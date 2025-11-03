@@ -1,4 +1,3 @@
-import os
 import numpy as np
 import xml.etree.ElementTree as etxml
 import pkg_resources
@@ -180,7 +179,7 @@ class BaseControl(object):
     
     def _getURDFParameter(self,
                           parameter_name: str
-                          ):
+                          ) -> float:
         """Reads a parameter from a drone's URDF file.
 
         This method is nothing more than a custom XML parser for the .urdf
@@ -214,3 +213,5 @@ class BaseControl(object):
         elif parameter_name == 'collision_z_offset':
             COLLISION_SHAPE_OFFSETS = [float(s) for s in URDF_TREE[1][2][0].attrib['xyz'].split(' ')]
             return COLLISION_SHAPE_OFFSETS[2]
+
+        raise Exception("Invalid paramter_name")
