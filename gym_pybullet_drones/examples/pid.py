@@ -74,6 +74,7 @@ def run(
     TARGET_POS = np.zeros((NUM_WP,3))
     for i in range(NUM_WP):
         TARGET_POS[i, :] = R*np.cos((i/NUM_WP)*(2*np.pi)+np.pi/2)+INIT_XYZS[0, 0], R*np.sin((i/NUM_WP)*(2*np.pi)+np.pi/2)-R+INIT_XYZS[0, 1], 0
+    print("target pos", TARGET_POS[0])
     wp_counters = np.array([int((i*NUM_WP/6)%NUM_WP) for i in range(num_drones)])
 
     #### Debug trajectory ######################################
